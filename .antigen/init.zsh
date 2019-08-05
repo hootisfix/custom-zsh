@@ -32,51 +32,51 @@ _antigen () {
 }
 antigen () {
   local MATCH MBEGIN MEND
-  [[ "$ZSH_EVAL_CONTEXT" =~ "toplevel:*" || "$ZSH_EVAL_CONTEXT" =~ "cmdarg:*" ]] && source "/home/dev/antigen.zsh" && eval antigen $@;
+  [[ "$ZSH_EVAL_CONTEXT" =~ "toplevel:*" || "$ZSH_EVAL_CONTEXT" =~ "cmdarg:*" ]] && source "~/antigen.zsh" && eval antigen $@;
   return 0;
 }
 typeset -gaU fpath path
-fpath+=(/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib /home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git /home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/heroku /home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/pip /home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/lein /home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/command-not-found /home/dev/.antigen/bundles/zsh-users/zsh-syntax-highlighting) path+=(/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib /home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git /home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/heroku /home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/pip /home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/lein /home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/command-not-found /home/dev/.antigen/bundles/zsh-users/zsh-syntax-highlighting)
+fpath+=(~/.antigen/bundles/robbyrussell/oh-my-zsh/lib ~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git ~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/heroku ~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/pip ~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/lein ~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/command-not-found ~/.antigen/bundles/zsh-users/zsh-syntax-highlighting) path+=(~/.antigen/bundles/robbyrussell/oh-my-zsh/lib ~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git ~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/heroku ~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/pip ~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/lein ~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/command-not-found ~/.antigen/bundles/zsh-users/zsh-syntax-highlighting)
 _antigen_compinit () {
-  autoload -Uz compinit; compinit -d "/home/dev/.antigen/.zcompdump"; compdef _antigen antigen
+  autoload -Uz compinit; compinit -d "~/.antigen/.zcompdump"; compdef _antigen antigen
   add-zsh-hook -D precmd _antigen_compinit
 }
 autoload -Uz add-zsh-hook; add-zsh-hook precmd _antigen_compinit
 compdef () {}
 
-if [[ -n "/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh" ]]; then
-  ZSH="/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh"; ZSH_CACHE_DIR="/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/cache/"
+if [[ -n "~/.antigen/bundles/robbyrussell/oh-my-zsh" ]]; then
+  ZSH="~/.antigen/bundles/robbyrussell/oh-my-zsh"; ZSH_CACHE_DIR="~/.antigen/bundles/robbyrussell/oh-my-zsh/cache/"
 fi
 #--- BUNDLES BEGIN
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/bzr.zsh';
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/clipboard.zsh';
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/compfix.zsh';
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/completion.zsh';
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/correction.zsh';
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/diagnostics.zsh';
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/directories.zsh';
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/functions.zsh';
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/git.zsh';
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/grep.zsh';
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/history.zsh';
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/key-bindings.zsh';
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/misc.zsh';
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/nvm.zsh';
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/prompt_info_functions.zsh';
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/spectrum.zsh';
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/termsupport.zsh';
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/theme-and-appearance.zsh';
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git/git.plugin.zsh';
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/heroku/heroku.plugin.zsh';
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/pip/pip.plugin.zsh';
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/command-not-found/command-not-found.plugin.zsh';
-source '/home/dev/.antigen/bundles/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh';
-source '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/themes/robbyrussell.zsh-theme.antigen-compat';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/bzr.zsh';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/clipboard.zsh';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/compfix.zsh';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/completion.zsh';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/correction.zsh';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/diagnostics.zsh';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/directories.zsh';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/functions.zsh';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/git.zsh';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/grep.zsh';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/history.zsh';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/key-bindings.zsh';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/misc.zsh';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/nvm.zsh';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/prompt_info_functions.zsh';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/spectrum.zsh';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/termsupport.zsh';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/theme-and-appearance.zsh';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git/git.plugin.zsh';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/heroku/heroku.plugin.zsh';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/pip/pip.plugin.zsh';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/command-not-found/command-not-found.plugin.zsh';
+source '~/.antigen/bundles/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh';
+source '~/.antigen/bundles/robbyrussell/oh-my-zsh/themes/robbyrussell.zsh-theme.antigen-compat';
 
 #--- BUNDLES END
 typeset -gaU _ANTIGEN_BUNDLE_RECORD; _ANTIGEN_BUNDLE_RECORD=('https://github.com/robbyrussell/oh-my-zsh.git lib plugin true' 'https://github.com/robbyrussell/oh-my-zsh.git plugins/git plugin true' 'https://github.com/robbyrussell/oh-my-zsh.git plugins/heroku plugin true' 'https://github.com/robbyrussell/oh-my-zsh.git plugins/pip plugin true' 'https://github.com/robbyrussell/oh-my-zsh.git plugins/lein plugin true' 'https://github.com/robbyrussell/oh-my-zsh.git plugins/command-not-found plugin true' 'https://github.com/zsh-users/zsh-syntax-highlighting.git / plugin true' 'https://github.com/robbyrussell/oh-my-zsh.git themes/robbyrussell.zsh-theme theme true')
 typeset -g _ANTIGEN_CACHE_LOADED; _ANTIGEN_CACHE_LOADED=true
-typeset -ga _ZCACHE_BUNDLE_SOURCE; _ZCACHE_BUNDLE_SOURCE=('/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/bzr.zsh' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/clipboard.zsh' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/compfix.zsh' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/completion.zsh' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/correction.zsh' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/diagnostics.zsh' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/directories.zsh' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/functions.zsh' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/git.zsh' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/grep.zsh' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/history.zsh' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/key-bindings.zsh' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/misc.zsh' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/nvm.zsh' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/prompt_info_functions.zsh' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/spectrum.zsh' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/termsupport.zsh' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/lib/theme-and-appearance.zsh' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git/git.plugin.zsh' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/heroku' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/heroku/heroku.plugin.zsh' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/pip' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/pip/pip.plugin.zsh' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/lein' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/command-not-found' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/command-not-found/command-not-found.plugin.zsh' '/home/dev/.antigen/bundles/zsh-users/zsh-syntax-highlighting//' '/home/dev/.antigen/bundles/zsh-users/zsh-syntax-highlighting///zsh-syntax-highlighting.plugin.zsh' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/themes/robbyrussell.zsh-theme' '/home/dev/.antigen/bundles/robbyrussell/oh-my-zsh/themes/robbyrussell.zsh-theme')
+typeset -ga _ZCACHE_BUNDLE_SOURCE; _ZCACHE_BUNDLE_SOURCE=('~/.antigen/bundles/robbyrussell/oh-my-zsh/lib' '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/bzr.zsh' '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/clipboard.zsh' '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/compfix.zsh' '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/completion.zsh' '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/correction.zsh' '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/diagnostics.zsh' '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/directories.zsh' '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/functions.zsh' '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/git.zsh' '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/grep.zsh' '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/history.zsh' '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/key-bindings.zsh' '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/misc.zsh' '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/nvm.zsh' '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/prompt_info_functions.zsh' '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/spectrum.zsh' '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/termsupport.zsh' '~/.antigen/bundles/robbyrussell/oh-my-zsh/lib/theme-and-appearance.zsh' '~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git' '~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git/git.plugin.zsh' '~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/heroku' '~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/heroku/heroku.plugin.zsh' '~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/pip' '~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/pip/pip.plugin.zsh' '~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/lein' '~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/command-not-found' '~/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/command-not-found/command-not-found.plugin.zsh' '~/.antigen/bundles/zsh-users/zsh-syntax-highlighting//' '~/.antigen/bundles/zsh-users/zsh-syntax-highlighting///zsh-syntax-highlighting.plugin.zsh' '~/.antigen/bundles/robbyrussell/oh-my-zsh/themes/robbyrussell.zsh-theme' '~/.antigen/bundles/robbyrussell/oh-my-zsh/themes/robbyrussell.zsh-theme')
 typeset -g _ANTIGEN_CACHE_VERSION; _ANTIGEN_CACHE_VERSION='v2.2.2'
 
 #-- END ZCACHE GENERATED FILE
