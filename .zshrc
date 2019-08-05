@@ -1,8 +1,4 @@
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=~/go/
-
-source /home/dev/antigen.zsh
-
+source ~/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
